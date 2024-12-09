@@ -1,0 +1,425 @@
+/* much of the code here is thanks to ChatGPT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#introduction1{
+    font-size: 15px;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    color:rgb(189, 189, 189);
+
+}
+
+#introduction2{
+    font-size: 20px;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+    color:white;
+    text-decoration: none;
+
+}
+
+
+#introduction3{
+    background-color: #2d353b; 
+    color: white;              
+    border: none;              
+    padding: 5px 10px;        
+    border-radius: 5px;  
+    font-size:5px;     
+    cursor: pointer;         
+    width: 50%;
+    text-align: center;
+    margin-top:30px;
+    margin-bottom:50px;
+    margin-right:50px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#introduction3 a{
+    font-size: 16px;
+    justify-content: center;
+    text-align: center;
+    color:white;
+    text-decoration: none;
+
+}
+#introduction3:hover{
+    transform: scale(1.03);
+}
+
+#introduction{
+    font-size: 70%;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 220px auto; /* Sidebar + Main Content */
+    grid-gap: 0; /* Space between columns */
+    margin: 0;
+
+
+
+    min-height: 100vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    background-image: url(Final_images/wavepainting.JPG);
+    background-repeat: no-repeat;
+    background-position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow:auto;
+}
+
+.sidebar {
+    position:sticky;
+    top: 0; 
+    left:0;
+    height: 100vh; 
+    width: 90%;
+    background-color: #222;
+    padding: 20px;
+    color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    align-self: start; 
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #ff0;
+}
+
+.dropbtn {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    transform: scale(1.03);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    background-color: #444;
+    margin-top: 5px;
+    position: relative;
+    padding: 0;
+    list-style: none;
+    border-radius: 4px;
+    overflow-y:scroll;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content li a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    border-bottom: 1px solid #555;
+}
+
+.dropdown-content li a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.icon img{
+    width: 20px; 
+    height: auto;
+    margin: 0 10px; 
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6;
+}
+
+.icon img:hover {
+    opacity: 1;
+    transform: scale(1.07);
+}
+
+.icon1 img{
+    width: 100px; 
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icon1 img:hover {
+    opacity: 1;
+    transform: scale(1.07);
+}
+
+.icon1 {
+    display:inline-block; 
+    text-align: center; 
+    margin:10px;
+}
+
+.overlay{
+    position:fixed;
+    right:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+header {
+    text-align: auto;
+    margin:0;
+    padding: 30px 0 5px; 
+    z-index: 1;
+}
+
+header h2 {
+    font-size: 30px;
+    margin-bottom:10px;
+    padding-top: 10px;
+}
+
+h1{
+    font-size:35px;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-row-gap:0;
+    max-width: 100%;
+    padding-top: 10px;
+    width:100%;
+    grid: column 2px;;
+    margin:0 auto;
+    padding: 10px;
+    z-index: 2; 
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 50px);
+    max-width: 1200px;
+
+}
+
+.grid-item {
+    width: 100%;
+    position: relative; 
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    margin-bottom: 100px;
+    opacity:1;
+}
+
+.grid-item img,
+.grid-item video {
+    width: 100%;
+    max-width: 80%;
+    height: 60%;
+    max-height: 300px;
+    object-fit: contain; 
+    border-radius: 8px;
+    overflow: visible;
+}
+
+.grid-item p {
+    font-size: 1.3rem;
+    color: white;
+    position: relative;
+    margin:10px;
+    padding:5px;
+    visibility: visible;
+}
+
+.grid-item:hover {
+    transform: scale(1.03);
+}
+
+.grid-p img{
+    opacity: 1;
+}
+
+/* Hero Section for the About page */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color:#222;
+  }
+  
+  .profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+  
+
+  .hero h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    padding-bottom: -3;
+    color: #007acc;
+  }
+
+  .hero h4 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color:white;
+    font-weight: 600;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color:#f1f1f1;
+  }
+  
+  /* Content Sections for the About page */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .about-me p {
+    margin-bottom: 1rem;
+  }
+  
+  .skills-list, .language-list, .tools-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .skills-list li, .language-list li, .tools-list li {
+    background-color: #007acc;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+/* Contact Section for the Talk to her page */
+.contact-section {
+    flex: 1;
+    padding: 40px;
+}
+
+.contact-hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-hero h1 {
+    font-size: 2.5rem;
+    color: #007acc;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Contact Form (this code was produced by ChatGPT)*/
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form .submit-btn {
+    background-color: #007acc;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #005f99;
+}
+
+/* Footer Styling */
+.footer {
+    grid-column: 1 / -1; /* super good code to make sure footer spans across the whole page*/
+    background-color: #222; 
+    color: grey;
+    text-align: right;
+    padding: 20px 10px;
+    position: relative; 
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
